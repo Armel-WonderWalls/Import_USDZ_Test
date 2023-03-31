@@ -38,3 +38,15 @@ usdzLoader.load(
     console.log(error);
   }
 );
+
+usdzLoader.load(
+  "./assets/RoomBureau.usdz",
+  (usdzScene) => {
+    console.log(usdzScene);
+    scene.add(usdzScene.scene);
+  },
+  undefined,
+  (error) => {
+    console.log(error);
+  }
+);
