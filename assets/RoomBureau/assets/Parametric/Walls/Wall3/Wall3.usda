@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Wall3"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Wall3" (
+    assetInfo = {
+        asset identifier = @./Wall3.usda@
+        string name = "Wall3"
+    }
+    customData = {
+        string Category = "Wall"
+        string UUID = "F6217C44-6873-4D44-8E40-945772D08F81"
+    }
+    kind = "component"
+)
+{
+    def Cube "Wall3"
+    {
+        rel material:binding = </Wall3/Wall3_color>
+        double size = 1
+        double3 xformOp:scale = (2.7843263149261475, 2.668070077896118, 0.00009999999747378752)
+        matrix4d xformOp:transform = ( (0.10502505302429199, 0, -0.9944695234298706, 0), (0, 0.9999998211860657, 0, 0), (0.9944695234298706, 0, 0.1050250455737114, 0), (3.78374981880188, 0.27141115069389343, -0.934473991394043, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Wall3_color"
+    {
+        token outputs:surface.connect = </Wall3/Wall3_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

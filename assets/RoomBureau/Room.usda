@@ -1,0 +1,222 @@
+#usda 1.0
+(
+    defaultPrim = "Room"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Room" (
+    kind = "assembly"
+)
+{
+    def Xform "Parametric_grp" (
+        kind = "group"
+    )
+    {
+        def Xform "Arch_grp" (
+            kind = "group"
+        )
+        {
+            def Xform "Wall_0_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall0/Wall0.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_1_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall1/Wall1.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_2_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall2/Wall2.usda@,
+                    @./assets/Parametric/Walls/Wall2/Window0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_3_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall3/Wall3.usda@,
+                    @./assets/Parametric/Walls/Wall3/Door0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_4_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall4/Wall4.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_5_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall5/Wall5.usda@,
+                    @./assets/Parametric/Walls/Wall5/Door0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_6_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall6/Wall6.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_7_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall7/Wall7.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_8_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall8/Wall8.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_9_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall9/Wall9.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_10_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall10/Wall10.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_11_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall11/Wall11.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_12_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall12/Wall12.usda@,
+                    @./assets/Parametric/Walls/Wall12/Window0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_13_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall13/Wall13.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_14_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall14/Wall14.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_15_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Walls/Wall15/Wall15.usda@
+            )
+            {
+            }
+
+            def Xform "Wall_16_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall16/Wall16.usda@,
+                    @./assets/Parametric/Walls/Wall16/Door0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_17_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall17/Wall17.usda@,
+                    @./assets/Parametric/Walls/Wall17/Door0.usda@,
+                    @./assets/Parametric/Walls/Wall17/Opening0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_18_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall18/Wall18.usda@,
+                    @./assets/Parametric/Walls/Wall18/Opening0.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Wall_19_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Walls/Wall19/Wall19.usda@,
+                    @./assets/Parametric/Walls/Wall19/Opening0.usda@
+                ]
+            )
+            {
+            }
+        }
+
+        def Xform "Object_grp" (
+            kind = "group"
+        )
+        {
+            def Xform "Chair_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Chair/Chair0.usda@,
+                    @./assets/Parametric/Chair/Chair1.usda@,
+                    @./assets/Parametric/Chair/Chair2.usda@,
+                    @./assets/Parametric/Chair/Chair3.usda@,
+                    @./assets/Parametric/Chair/Chair4.usda@
+                ]
+            )
+            {
+            }
+
+            def Xform "Table_grp" (
+                kind = "group"
+                prepend references = @./assets/Parametric/Table/Table0.usda@
+            )
+            {
+            }
+
+            def Xform "Storage_grp" (
+                kind = "group"
+                prepend references = [
+                    @./assets/Parametric/Storage/Storage0.usda@,
+                    @./assets/Parametric/Storage/Storage1.usda@
+                ]
+            )
+            {
+            }
+        }
+    }
+}
+

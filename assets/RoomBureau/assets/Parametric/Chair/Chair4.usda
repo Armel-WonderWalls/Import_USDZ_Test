@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Chair4"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Chair4" (
+    assetInfo = {
+        asset identifier = @./Chair4.usda@
+        string name = "Chair4"
+    }
+    customData = {
+        string Category = "Chair"
+        string UUID = "3D90472E-794E-4464-9078-56855804F23F"
+    }
+    kind = "component"
+)
+{
+    def Cube "Chair4"
+    {
+        rel material:binding = </Chair4/Chair4_color>
+        double size = 1
+        double3 xformOp:scale = (0.6197218298912048, 1.0208826065063477, 0.6781469583511353)
+        matrix4d xformOp:transform = ( (0.08402381092309952, 0, -0.9964637756347656, 0), (0, 0.9999999403953552, 0, 0), (0.9964637756347656, 0, 0.08402381092309952, 0), (-1.183687448501587, -0.5521824955940247, -1.9755611419677734, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Chair4_color"
+    {
+        token outputs:surface.connect = </Chair4/Chair4_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

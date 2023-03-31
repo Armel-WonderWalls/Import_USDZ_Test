@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Door0"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Door0" (
+    assetInfo = {
+        asset identifier = @./Door0.usda@
+        string name = "Door0"
+    }
+    customData = {
+        string Category = "Door(Isopen: False)"
+        string UUID = "53626873-D4A5-459E-A759-4A72792F0D12"
+    }
+    kind = "component"
+)
+{
+    def Cube "Door0"
+    {
+        rel material:binding = </Door0/Door0_color>
+        double size = 1
+        double3 xformOp:scale = (0.9029112458229065, 2.2392730712890625, 0.0005000000237487257)
+        matrix4d xformOp:transform = ( (-0.10502536594867706, 0, 0.9944696426391602, 0), (0, 0.9999999403953552, 0, 0), (-0.9944695234298706, 0, -0.10502535104751587, 0), (8.526328086853027, 0.05701267346739769, -2.2945380210876465, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Door0_color"
+    {
+        token outputs:surface.connect = </Door0/Door0_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.33, 0.33, 0.33)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

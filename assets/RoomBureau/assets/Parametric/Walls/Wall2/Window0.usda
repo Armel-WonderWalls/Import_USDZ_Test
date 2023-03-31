@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Window0"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Window0" (
+    assetInfo = {
+        asset identifier = @./Window0.usda@
+        string name = "Window0"
+    }
+    customData = {
+        string Category = "Window"
+        string UUID = "6729E641-F2D7-4906-8C33-59EC085B4BC9"
+    }
+    kind = "component"
+)
+{
+    def Cube "Window0"
+    {
+        rel material:binding = </Window0/Window0_color>
+        double size = 1
+        double3 xformOp:scale = (2.334442138671875, 1.8409067392349243, 0.0005000000237487257)
+        matrix4d xformOp:transform = ( (0.10502540320158005, 0, -0.9944696426391602, 0), (0, 0.9999999403953552, 0, 0), (0.9944695234298706, 0, 0.10502538830041885, 0), (-2.2253386974334717, 0.6849927306175232, -0.21676722168922424, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Window0_color"
+    {
+        token outputs:surface.connect = </Window0/Window0_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.33, 0.33, 0.33)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

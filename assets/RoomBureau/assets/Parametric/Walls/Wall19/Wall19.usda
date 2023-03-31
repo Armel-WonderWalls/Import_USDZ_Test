@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Wall19"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Wall19" (
+    assetInfo = {
+        asset identifier = @./Wall19.usda@
+        string name = "Wall19"
+    }
+    customData = {
+        string Category = "Wall"
+        string UUID = "19E3DC59-4237-4C5B-8A4B-10DE826BA2CA"
+    }
+    kind = "component"
+)
+{
+    def Cube "Wall19"
+    {
+        rel material:binding = </Wall19/Wall19_color>
+        double size = 1
+        double3 xformOp:scale = (3.727057933807373, 2.668070077896118, 0.00009999999747378752)
+        matrix4d xformOp:transform = ( (-0.10159003734588623, 0, 0.9948263168334961, 0), (0, 0.9999998211860657, 0, 0), (-0.9948262572288513, 0, -0.10159003734588623, 0), (2.691493511199951, 0.27141115069389343, -2.618720054626465, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Wall19_color"
+    {
+        token outputs:surface.connect = </Wall19/Wall19_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

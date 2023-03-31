@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Wall9"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Wall9" (
+    assetInfo = {
+        asset identifier = @./Wall9.usda@
+        string name = "Wall9"
+    }
+    customData = {
+        string Category = "Wall"
+        string UUID = "3302BE1E-0359-4180-AF2C-64B2A314CA0B"
+    }
+    kind = "component"
+)
+{
+    def Cube "Wall9"
+    {
+        rel material:binding = </Wall9/Wall9_color>
+        double size = 1
+        double3 xformOp:scale = (0.9124740362167358, 2.668070077896118, 0.00009999999747378752)
+        matrix4d xformOp:transform = ( (-0.9944697022438049, 0, -0.10502476245164871, 0), (0, 0.9999998211860657, 0, 0), (0.10502474755048752, 0, -0.9944695234298706, 0), (-2.416224241256714, 0.27141115069389343, -2.7533652782440186, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Wall9_color"
+    {
+        token outputs:surface.connect = </Wall9/Wall9_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

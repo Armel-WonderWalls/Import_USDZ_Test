@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Storage0"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Storage0" (
+    assetInfo = {
+        asset identifier = @./Storage0.usda@
+        string name = "Storage0"
+    }
+    customData = {
+        string Category = "Storage"
+        string UUID = "AF56CD30-2450-4020-BE40-24702BC4D376"
+    }
+    kind = "component"
+)
+{
+    def Cube "Storage0"
+    {
+        rel material:binding = </Storage0/Storage0_color>
+        double size = 1
+        double3 xformOp:scale = (4.368789196014404, 1.9121886491775513, 0.5154361128807068)
+        matrix4d xformOp:transform = ( (0.9944695830345154, 0, 0.10502488166093826, 0), (0, 0.9999999403953552, 0, 0), (-0.10502488911151886, 0, 0.9944695234298706, 0), (0.6814284324645996, -0.10652954876422882, -4.445725917816162, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Storage0_color"
+    {
+        token outputs:surface.connect = </Storage0/Storage0_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

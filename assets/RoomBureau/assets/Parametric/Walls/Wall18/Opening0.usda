@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Opening0"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Opening0" (
+    assetInfo = {
+        asset identifier = @./Opening0.usda@
+        string name = "Opening0"
+    }
+    customData = {
+        string Category = "Opening"
+        string UUID = "A6CF82C6-EA5A-4F02-96FD-2A73765622E5"
+    }
+    kind = "component"
+)
+{
+    def Cube "Opening0"
+    {
+        rel material:binding = </Opening0/Opening0_color>
+        double size = 1
+        double3 xformOp:scale = (0.9519507884979248, 2.0399999618530273, 0.0005000000237487257)
+        matrix4d xformOp:transform = ( (-0.9944695830345154, 0, -0.10502535104751587, 0), (0, 0.9999999403953552, 0, 0), (0.10502535104751587, 0, -0.9944695830345154, 0), (3.9503731727600098, -0.04262387007474899, 2.125591278076172, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Opening0_color"
+    {
+        token outputs:surface.connect = </Opening0/Opening0_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.33, 0.33, 0.33)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+

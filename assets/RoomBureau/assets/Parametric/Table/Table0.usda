@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "Table0"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Table0" (
+    assetInfo = {
+        asset identifier = @./Table0.usda@
+        string name = "Table0"
+    }
+    customData = {
+        string Category = "Table"
+        string UUID = "33C2F0BB-15BE-45AF-8D84-A130A83D9314"
+    }
+    kind = "component"
+)
+{
+    def Cube "Table0"
+    {
+        rel material:binding = </Table0/Table0_color>
+        double size = 1
+        double3 xformOp:scale = (0.9528489112854004, 0.7498689889907837, 0.6976772546768188)
+        matrix4d xformOp:transform = ( (-0.9944696426391602, 0, -0.1050250455737114, 0), (0, 0.9999999403953552, 0, 0), (0.1050250455737114, 0, -0.9944696426391602, 0), (1.5069364309310913, -0.6876893639564514, 1.5167629718780518, 0.9999999403953552) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:scale"]
+    }
+
+    def Material "Table0_color"
+    {
+        token outputs:surface.connect = </Table0/Table0_color/surfaceShader.outputs:surface>
+
+        def Shader "surfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            color3f inputs:emissiveColor = (0, 0, 0)
+            normal3f inputs:normal = (1, 1, 1)
+            float inputs:occlusion = 1
+            float inputs:opacity = 1
+            token outputs:surface
+        }
+    }
+}
+
